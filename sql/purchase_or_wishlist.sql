@@ -14,10 +14,11 @@ SELECT
 	p.price,
 	CASE WHEN cte.purchase_count * 0.75 > cte.wishlist_count
 		THEN 'purchase'
-	CASE WHEN cte.purchase_count < cte.wishlist_count * 0.75
+		WHEN cte.purchase_count < cte.wishlist_count * 0.75
 		THEN 'wishlist'
 		ELSE 'Marginal Difference'
 		END AS purchase_or_wishlist
 	FROM products p
 		JOIN cte 
 			ON p.product_id = cte.product_id
+ORDER BY p.price DESC
