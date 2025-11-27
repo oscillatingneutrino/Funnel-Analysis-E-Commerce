@@ -7,6 +7,7 @@ SELECT
 )
 SELECT
     p.product_name,
+	p.category,
     cte.product_id,
     cte.product_count,
     p.rating
