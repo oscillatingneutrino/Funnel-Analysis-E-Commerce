@@ -1,3 +1,4 @@
+-- this assumes that the date for completed and returned orders are correct, meaning they are after the order date
 WITH cte AS ( 
 SELECT
 	o.user_id,
