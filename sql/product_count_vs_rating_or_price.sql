@@ -10,7 +10,8 @@ SELECT
 	p.category,
     cte.product_id,
     cte.product_count,
-    p.rating
+    p.rating,
+	p.price
     FROM cte
 	JOIN products p
 		ON cte.product_id = p.product_id
