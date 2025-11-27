@@ -1,11 +1,11 @@
 WITH cte AS (
 SELECT
-	COUNT(order_status) AS complete_orders
-    FROM orders
-	WHERE order_status = 'completed'
+	COUNT(CASE WHEN order_status = 'completed' THEN 1 END) AS completed_orders,
+	COUNT(CASE WHEN order_status = 'returned' THEN 1 END) AS returned_orders
+	FROM orders
 )
 SELECT
-	complete_orders/(COUNT(order_status) + complete_orders) AS completed_vs_returned
-    FROM orders
-    JOIN cte
-    WHERE order_status = 'returned'
+	completed_orders/CAST( (completed_orders + returned_orders) AS FLOAT) AS completed_ratio
+	FROM cte;
+
+-- Completed ratio: 0.4972177568937801
