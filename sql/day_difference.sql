@@ -9,7 +9,7 @@ cte2 AS (
 SELECT
 	cte.order_id,
     oi.product_id,
-	AVG(r.review_date_number - o.date_number) AS day_difference
+	ROUND(AVG(r.review_date_number - o.date_number)) AS day_difference
 FROM cte
 	JOIN reviews r
 		ON r.order_id = cte.order_id
