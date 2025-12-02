@@ -14,4 +14,4 @@ SELECT
 	JOIN orders o
 		ON cte.user_id = o.user_id
 
--- Answers for this dataset: signup before: 229.8729409870905, signup after: 229.8729409870905
+-- Answers for this dataset: signup before: 229.8729409870905, signup after: 225.94646887713972
