@@ -8,10 +8,10 @@ WITH cte AS (
         GROUP BY user_id
 )
 SELECT
-	AVG(CASE WHEN o.date_number > cte.earliest_event THEN o.date_number - cte.earliest_event END) AS signup_before,
-    ABS(AVG(CASE WHEN o.date_number < cte.earliest_event THEN o.date_number - cte.earliest_event END)) AS signup_after
+	ROUND(AVG(CASE WHEN o.date_number > cte.earliest_event THEN o.date_number - cte.earliest_event END),2) AS signup_before,
+    ROUND(ABS(AVG(CASE WHEN o.date_number < cte.earliest_event THEN o.date_number - cte.earliest_event END)),2) AS signup_after
         FROM cte
 	JOIN orders o
 		ON cte.user_id = o.user_id
 
--- Answers for this dataset: signup before: 229.8729409870905, signup after: 225.94646887713972
+-- Answers for this dataset: signup before: 229.87, signup after: 225.95
