@@ -19,3 +19,5 @@ SELECT
 	AVG(completed_time - initial_time) time_from_processing_to_completed
 	FROM cte2
 WHERE completed_time > initial_time
+
+-- result from dataset: NULL
