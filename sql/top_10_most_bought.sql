@@ -1,3 +1,5 @@
+-- This code calculates the 10 most bought products
+
 WITH cte AS (
 	SELECT
 		product_id,
