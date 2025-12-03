@@ -1,3 +1,5 @@
+-- This code calculates the amount it takes for a product to be viewed and then bought
+
 WITH cte AS(
 	SELECT
 		user_id,
