@@ -1,3 +1,5 @@
+-- This code calculates the amount of orders that are completed and not returned
+
 WITH cte AS (
 SELECT
 	COUNT(CASE WHEN order_status = 'completed' THEN 1 END) AS completed_orders,
