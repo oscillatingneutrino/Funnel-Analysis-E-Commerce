@@ -6,7 +6,7 @@ SELECT
 GROUP BY order_id
 )
 SELECT
-	AVG(sum_spent)
+	ROUND(AVG(sum_spent),2)
     FROM cte
 
--- Answer: 595.9334475000019
+-- Answer: 595.93
