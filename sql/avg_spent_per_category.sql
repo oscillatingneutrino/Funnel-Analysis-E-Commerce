@@ -10,6 +10,6 @@ GROUP BY oi.order_id,p.category
 )
 SELECT
 	category,
-	AVG(sum_spent_per_category) AS avg_spent_per_category
+	ROUND(AVG(sum_spent_per_category),2) AS avg_spent_per_category
     FROM cte
 GROUP BY category
