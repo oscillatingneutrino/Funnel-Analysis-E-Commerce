@@ -1,3 +1,5 @@
+-- This code calculates how many times a user has used the services to purchase an item
+
 SELECT
 	oi.user_id,
 	COUNT(DISTINCT oi.order_id) AS purchase_times
