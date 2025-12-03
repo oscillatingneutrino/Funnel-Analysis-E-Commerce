@@ -12,28 +12,26 @@
 
 
 ## Executive Summary
-The conversion rate of users who choose to signup to this company for a purchase has been low; with approximately 70% of users choosing not to make a purchase, my goal became finding out potential problems in the user experience and offer potential solutions. Using SQL, Tableau, and , I created SQL queries to obtain useful metrics about the user journey through our platform while also using SQL queries fed into Tableau to to identify key characteristics about user spending habits. Having tested the user experience, I suggest the following recommedations to improve the conversion rate and profitability:
+The conversion rate of users who choose to signup to this company for a purchase has been low; with approximately 70% of users choosing not to make a purchase, my goal became finding out potential problems in the user experience and offer potential solutions. Using SQL, Tableau, and Python, I developed KPI's to obtain useful metrics about the user journey through our platform while also using SQL queries fed into Tableau to to identify key characteristics about user spending habits. Having tested the user experience, I suggest the following recommedations to improve the conversion rate and profitability:
 
 
 
 ## Project Background
 
 ## Methods
-Upon the primary inspection of the provided data, it became apparent that a significant amount of users displayed one or both of the following traits: there existed users who chose not to create an account, but used our services to purchase an item, and there were users who chose to give reviews to items before they had arrived. Although realistically problematic, in the former case, this can be explained by assuming that users who used the services but decided not to create an account were given a temporary user identification that stores purchase information to allow the user the opportunity to streamline the process of account creation should they choose to create an account in the future.  The latter of the issues mentioned is problematic as reviews can impact the impression on users browsing the item, and change its purchase rate. To address both of these issues, separate SQL queries using CASE statements were created to flag users who displayed the mentioned traits, which were also capable of counting the amount of flagged users.
+Upon the primary inspection of the provided data, it became apparent that a significant amount of users displayed one or both of the following traits: there existed users who chose not to create an account, but used our services to purchase an item, and there were users who chose to review items before receiving them. Although problematic, in the former case, this can be explained by assuming that users who used the services but decided not to create an account were given a temporary user identification that stores purchase information to give the user the opportunity to streamline the process of account creation should they choose to create an account in the future.  The latter of the issues mentioned is problematic as reviews can impact the impression on users browsing a product, and potentially change its purchase rate. To address both of these issues, separate SQL queries using CASE statements were created to flag users who displayed either of the mentioned traits.
 
-Other issues arose with the quality of the data. For instance, a section of the data included user events, or the actions that a user was capable of performing: view, purchase, wishlist, and cart. The typical path for any individual who seeks to purchase an item is either view to cart to purchase, or view to purchase. Unfortunately, the way this dataset was simulated was such that the order of the events was randomized as was the timeline of events, and thus certain points of the funnel returned no values, or returned unreasonably long lengths in time. Nevertheless, SQL queries exist to find the two mentioned paths and create a count for them, as well as time elapsed between key events as averages.
+Other issues arose with the quality of the data. For instance, a section of the data included user events, or the actions that a user was capable of performing (view, purchase, wishlist, and cart). The typical path for any individual who seeks to purchase an item is either view to cart to purchase, or view to purchase. Unfortunately, the way this dataset was simulated was such that the order of the events was randomized as was the timeline of events, and thus certain points of the funnel returned no values, or returned unreasonably long lengths in time. Nevertheless, SQL queries exist to find the two mentioned paths and create a count for them, as well as the average time elapsed between key events.
 
 A couple of questions arose regarding the amount of individuals within the dataset who made an account but never purchased an item. For these cases, a SQL query using EXCEPT was created to retrieve the pertinent list of individuals.
 
-Still, a SQL query was created to flag the users and give the individual the opportunity to count the amount of individuals who used the services before creating an account. as such, a SQL query using CASE statement was created to flag users reviewing products before obtaining them.
+A user may not always have the necessary funds required to spend on any products. Such a user may instead choose to store said product in the "wishlist" category. In order to determine if users deem the price of our products as being outside of their budget, I counted the amount of items that were either purchased or wishlisted; in cases where there was not enough data to conclusively determine if a product was more purchased than wishlisted, a separate category (*Marginal Difference*) was given for these products.
 
-A user may not always have the necessary funds required to spend on any products. Such a user may instead choose to store said product in the "wishlist" category.In order to determine if users deem the price of our products as being outside of their budget, I counted the amount of items that were either purchased or wishlisted; in cases where there was not enough data to conclusively determine if a product was more purchased than wishlisted, a separate category (*Marginal Difference*) was given for these products.
-
-A majority of the analysis performed during the course of this assignment was primarily conducted on MySQL. The SQL queries used were created using subqueries, CTE's, RANK(), CASE statements, and aggregate functions. The results of queries were typically stored as csv files, which were used in conjunction with Tableau to further analyze the attained data. In cases when aggregate functions were used to obtain singular values (e.g. an average), the result was written as a comment at the bottom of the mysql file.
+A majority of the analysis performed during the course of this assignment was primarily conducted on MySQL. The SQL queries used were created using subqueries, CTE's, RANK(), CASE statements, and aggregate functions. The results of queries were typically stored as csv files, which were used in conjunction with Tableau and Python for further analysis. In cases when aggregate functions were used to obtain singular values (e.g. an average), the result was written as a comment at the bottom of the mysql file.
 
 
 ## User Funnel Journey
-On average, it was found that if a user chose to use our site before creating an account, it took them about 226 days to create one. The users who chose to begin using our site spend more than 250 days before taking any action:
+On average, it was found that if a user chose to use our site before creating an account, it took them about 226 days to create one. The users who chose to begin using our site spent more than 250 days before taking any action:
 
 | User Action | Average Time for Action (days)|
 |---|---|
@@ -43,7 +41,7 @@ On average, it was found that if a user chose to use our site before creating an
 |wishlist|263.78|
 
 
-Users who viewed a product before buying it spent about 140 days before purchasing it. If a product was purchased and the order was either kept or returned, the average user spent about 220 days before leaving a review, with the least amount of time being reviewing a product the day of.
+Users who viewed a product before buying it spent about 140 days before purchasing it. If a product was purchased and the order was either kept or returned, the average user spent about 220 days before leaving a review, with the least amount of time being reviewing the product the day of.
 
 
 ## User Engagement and Activity
@@ -58,7 +56,7 @@ On average, if a customer used our services to buy an item, it is likely that th
 
 
 ## Revenue Metrics
-The average order value was found to be $595.93. When separated by category, a user will spend the approximate amounts per order on average:
+The average order value was found to be $595.93. When separated by category, a user will likely spend the following approximate amounts per order:
 
 |category|Average Spent Per Category (USD)|
 |---|---|
