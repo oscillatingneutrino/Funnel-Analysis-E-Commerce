@@ -2,7 +2,7 @@ WITH cte AS (
 SELECT 
 	product_id, 
 	COUNT(CASE WHEN event_type = 'purchase' THEN 1 END) AS purchase_count,
-	COUNT(CASE WHEN event_type = 'wishlist' THEN 1 END) AS wishlist_ccount
+	COUNT(CASE WHEN event_type = 'wishlist' THEN 1 END) AS wishlist_count
 	FROM events 
 	WHERE event_type IN('purchase','wishlist') 
     GROUP BY product_id 
