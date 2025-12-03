@@ -1,3 +1,6 @@
+-- This code calculates the amount of time from account creation to the first time an individual performs
+-- a particular action
+
 WITH cte AS(
 	SELECT
 	user_id,
@@ -15,9 +18,9 @@ SELECT
 )
 SELECT
 	e.event_type,
-	AVG(cte2.time_difference) AS avg_per_event_type
+	ROUND(AVG(cte2.time_difference),2) AS avg_per_event_type
     FROM cte2
 		JOIN events e
 			ON cte2.user_id = e.user_id
 	GROUP BY e.event_type
-    ORDER BY AVG(cte.time_difference) DESC
+    ORDER BY AVG(cte2.time_difference) DESC
