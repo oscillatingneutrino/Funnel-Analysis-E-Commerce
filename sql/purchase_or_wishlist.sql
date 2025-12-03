@@ -1,3 +1,6 @@
+-- This code classifies products on the basis of how many times they have either been purchased or wishlisted
+-- if the difference between a product being purchased or wishlisted in less than 25%, the classification is: Marginal Difference
+
 WITH cte AS ( 
 SELECT 
 	product_id, 
