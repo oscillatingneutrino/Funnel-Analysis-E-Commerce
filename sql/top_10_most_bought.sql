@@ -11,12 +11,14 @@ SELECT
     product_name,
     category,
 	item_price,
+    quant_sum,
     ranking
     FROM
     (
 		SELECT
 		cte.product_id,
         item_price,
+        quant_sum,
 		RANK() OVER (ORDER BY quant_sum DESC) AS ranking
 		FROM cte
 	) AS t1
