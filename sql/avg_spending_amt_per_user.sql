@@ -1,3 +1,5 @@
+-- This code calculates the average amount spent by a user per order
+
 WITH cte AS (
 SELECT
 	order_id,
@@ -9,4 +11,4 @@ SELECT
 	ROUND(AVG(sum_spent),2)
     FROM cte
 
--- Answer: 595.93
+-- Result: 595.93
