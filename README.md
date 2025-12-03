@@ -71,7 +71,7 @@ The average order value was found to be $595.93. When separated by category, a u
 |Automotive|644.18|
 |Books|70.31|
 |Electronics|1285.76|
-|Toys||90.7
+|Toys|90.7|
 |Home & Kitchen|292.38|
 |Groceries|25.17|
 |Clothing|171.23|
