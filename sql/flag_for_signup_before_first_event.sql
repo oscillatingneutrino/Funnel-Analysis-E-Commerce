@@ -1,3 +1,5 @@
+-- This code creates an additional column to flag users who take an action before creating an account
+
 SELECT
 	u.user_id,
 	CASE WHEN u.signup_date_number > MIN(e.event_timestamp_number) 
