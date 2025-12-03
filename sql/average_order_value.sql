@@ -1,3 +1,4 @@
+-- This code calculates the average order_value
 SELECT
 	ROUND(AVG(total_spent),2) AS average_order_value
     FROM(
