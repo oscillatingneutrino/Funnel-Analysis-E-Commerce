@@ -1,3 +1,5 @@
+-- This code calculates the 100 greatest orders
+
 WITH cte AS (
 	SELECT
     order_id,
