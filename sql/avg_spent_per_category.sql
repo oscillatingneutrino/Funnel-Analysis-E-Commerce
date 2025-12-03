@@ -1,3 +1,5 @@
+-- This code calculates the average amount spent per order per category
+
 WITH cte AS (
 SELECT
 	p.category,
