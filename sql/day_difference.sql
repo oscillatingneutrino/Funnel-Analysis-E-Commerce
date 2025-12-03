@@ -1,3 +1,6 @@
+-- This code calculates the amount of time it takes for an order to receive a review after it has been received
+-- by an individual
+
 WITH cte AS (
 SELECT order_id,product_id
 FROM order_items
