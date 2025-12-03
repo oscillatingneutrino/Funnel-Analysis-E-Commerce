@@ -1,3 +1,5 @@
+-- This code calcualtes how many orders are completed vs. returned for each product that has ever been purchased
+
 WITH cte AS (
 SELECT
 	oi.product_id,
