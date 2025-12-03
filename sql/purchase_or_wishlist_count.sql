@@ -1,3 +1,6 @@
+-- This code counts the amount of products that have been wishlisted, purchased, or if there is not enough
+-- data to determine if a product is more wishlisted than bought or vise versa
+
 WITH cte AS ( 
 SELECT 
 	product_id, 
