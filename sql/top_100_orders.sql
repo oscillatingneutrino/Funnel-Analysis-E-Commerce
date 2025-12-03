@@ -1,4 +1,4 @@
--- This code calculates the 100 greatest orders
+-- This code calculates the 100 greatest orders by price
 
 WITH cte AS (
 	SELECT
