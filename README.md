@@ -33,12 +33,7 @@ A majority of the analysis performed during the course of this assignment was pr
 
 
 ## User Funnel Journey
-
-### 
-
-### Time Between User Signup and Their First Event
-
- On average, it was found that if a user chose to use our site before creating an account, it took them about 226 days to create one. The users who chose to begin using our site spend more than 250 days before taking any action:
+On average, it was found that if a user chose to use our site before creating an account, it took them about 226 days to create one. The users who chose to begin using our site spend more than 250 days before taking any action:
 
 | User Action | Average Time for Action (days)|
 |---|---|
@@ -50,6 +45,7 @@ A majority of the analysis performed during the course of this assignment was pr
 
 Users who viewed a product before buying it spent about 140 days before purchasing it. If a product was purchased and the order was either kept or returned, the average user spent about 220 days before leaving a review, with the least amount of time being reviewing a product the day of.
 
+
 ## User Engagement and Activity
 
 During my analysis, I found that 7,000 active users were found to have created an account, but chose never to make a purchase. 
@@ -58,7 +54,7 @@ In total, of all products that were succesfully purchased or returned, 65.54% of
 
 As mentioned in the Methods section, the data simulation assigned randomized dates and the order of events. The SQL query used to determine the path taken by individuals who completeed a purchase found that only 3 cases existed where viewing a product resulted in a succesful purchase, while about 59,000 other purchases followed an other path that did not conclude in a purchase.
 
-
+On average, if a customer used our services to buy an item, it is likely that they will use our services an average of approximately two times throughout the lifecycle of their account.
 
 
 ## Revenue Metrics
@@ -77,10 +73,10 @@ The average order value was found to be $595.93. When separated by category, a u
 |Clothing|171.23|
 |Sports|258.38|
 
+## Product Performance
 The following products were bought the most often:
 ![image_files/top_10_count.png](image_files/top_10_count.png)
 
 From our catalogue of products, 15.07% were purchased more than they were wishlisted, while 65.83% of products were wishlisted.
-## Product Performance
 
 ## Acknowledgements
