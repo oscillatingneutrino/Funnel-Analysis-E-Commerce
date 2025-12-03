@@ -1,4 +1,4 @@
--- This code calculates the ratio of products that are not reviewed
+-- This code calculates the ratio of products that have been bought but not reviewed
 
 WITH cte AS (
 SELECT order_id,product_id
