@@ -1,3 +1,4 @@
+-- This code calculates the average amount of actions by a user
 SELECT 
 	AVG(counter)
 		FROM
