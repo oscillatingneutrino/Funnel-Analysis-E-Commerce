@@ -1,3 +1,5 @@
+-- This code calculates how much time it takes for an order to go from being processed to being completed
+
 WITH cte AS (
 SELECT order_id,product_id
 FROM order_items
