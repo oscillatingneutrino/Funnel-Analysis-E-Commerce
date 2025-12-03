@@ -1,3 +1,5 @@
+-- This code calculates the amount of products that are not reviewed
+
 WITH cte AS (
 SELECT order_id,product_id
 FROM order_items
