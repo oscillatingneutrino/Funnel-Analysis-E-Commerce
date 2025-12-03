@@ -1,3 +1,5 @@
+-- This code calculates the amount of users who complete a certain pathway
+
 WITH cte AS(
 	SELECT
 		user_id,
