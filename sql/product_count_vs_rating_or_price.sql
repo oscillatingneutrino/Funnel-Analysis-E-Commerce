@@ -1,3 +1,5 @@
+-- This code counts the total amount of times a product has been bought and lists its price and rating
+
 WITH cte AS (
 SELECT
 	oi.product_id,
