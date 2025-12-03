@@ -52,7 +52,7 @@ During my analysis, I found that 7,000 active users were found to have created a
 
 In total, of all products that were succesfully purchased or returned, 65.54% of products received no review.In this dataset, users have the possibility of performing one of the following actions: view, purchase, wishlist, and cart. Typically, an individual will perform approximately 8 actions throughout the lifecycle of their account.
 
-As mentioned in the Methods section, the data simulation assigned randomized dates and the order of events. The SQL query used to determine the path taken by individuals who completeed a purchase found that only 3 cases existed where viewing a product resulted in a succesful purchase, while about 59,000 other purchases followed an other path that did not conclude in a purchase.
+As mentioned in the Methods section, the data simulation assigned randomized dates and the order of events. The SQL query used to determine the path taken by individuals who completed a purchase found that only 3 cases existed where viewing a product resulted in a succesful purchase, while about 59,000 other purchases followed an other path that did not conclude in a purchase.
 
 On average, if a customer used our services to buy an item, it is likely that they will use our services an average of approximately two times throughout the lifecycle of their account.
 
@@ -74,9 +74,9 @@ The average order value was found to be $595.93. When separated by category, a u
 |Sports|258.38|
 
 ## Product Performance
+From our catalogue of products, 15.07% were purchased more than they were wishlisted, while 65.83% of products were wishlisted. Of the products that were bought, 50.28% are returned.
+
 The following products were bought the most often:
 ![image_files/top_10_count.png](image_files/top_10_count.png)
-
-From our catalogue of products, 15.07% were purchased more than they were wishlisted, while 65.83% of products were wishlisted.
 
 ## Acknowledgements
