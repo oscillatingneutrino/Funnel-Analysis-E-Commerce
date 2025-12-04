@@ -87,10 +87,10 @@ Pertinent to discovering the effects on a user's perception of a product are the
 Suppose the above plot was partitioned into 4 separate segments, and the x- and y- markings were removed. If an outside individual was asked to correctly rearrange the plot, it is unlikely that they would be able to do so, as the plot appears to be uniformly scattered. This scattered pattern apparent in the above plot points to the possibility that how often a product is bought is unaffected by the rating of said product, and products with low ratings are bought the same amount of times as products with higher ratings. This effect can be reasonably explained through the following thought processes:
 
 
-![image_files/count_rating](image_files/count_rating)
-*A graphical representation of the range of the amount of times a product has been bought in comparison to the rating of the product.*
+![image_files/count_price](image_files/count_price)
+*A graphical representation of the range of the amount of times a product has been bought in comparison to the price of the product.*
 
-
+Although similar, the above plot does not follow the same pattern of a normal distribution; what is apprent, however, is that products with a price less than $1500 are bought the most often.
 
 ## Categorizing Customers
 The following 10 customers have spent the most amount per order
