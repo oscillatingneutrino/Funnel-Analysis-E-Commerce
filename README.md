@@ -12,14 +12,14 @@
 
 
 ## Executive Summary
-The conversion rate of users who choose to signup to this company for a purchase has been low; with approximately 70% of users choosing not to make a purchase, my goal became finding out potential problems in the user experience and offer potential solutions. Using SQL, Tableau, and Python, I developed KPI's to obtain useful metrics about the user journey through our platform while also using SQL queries fed into Tableau to to identify key characteristics about user spending habits. Having tested the user experience, I suggest the following recommedations to improve the conversion rate and profitability:
+The conversion rate of users who choose to sign up to this company for a purchase has been low; with approximately 70% of users choosing not to make a purchase, my goal became finding out potential problems in the user experience and offering potential solutions. Using SQL, Tableau, and Python, I developed KPI's to obtain useful metrics about the user journey through our platform while also using SQL queries fed into Tableau to identify key characteristics about user spending habits. Having tested the user experience, I suggest the following recommendations to improve the conversion rate and profitability:
 
 
 
 ## Project Background
 
 ## Methods
-Upon the primary inspection of the provided data, it became apparent that a significant amount of users displayed one or both of the following traits: there existed users who chose not to create an account, but used our services to purchase an item, and there were users who chose to review items before receiving them. Although problematic, in the former case, this can be explained by assuming that users who used the services but decided not to create an account were given a temporary user identification that stores purchase information to give the user the opportunity to streamline the process of account creation should they choose to create an account in the future.  The latter of the issues mentioned is problematic as reviews can impact the impression on users browsing a product, and potentially change its purchase rate. To address both of these issues, separate SQL queries using CASE statements were created to flag users who displayed either of the mentioned traits.
+Upon the primary inspection of the provided data, it became apparent that a significant number of users displayed one or both of the following traits: there existed users who chose not to create an account, but used our services to purchase an item, and there were users who chose to review items before receiving them. Although problematic, in the former case, this can be explained by assuming that users who used the services but decided not to create an account were given a temporary user identification that stores purchase information to give the user the opportunity to streamline the process of account creation should they choose to create an account in the future.  The latter of the issues mentioned is problematic as reviews can impact the impression on users browsing a product, and potentially change its purchase rate. To address both of these issues, separate SQL queries using CASE statements were created to flag users who displayed either of the mentioned traits.
 
 Other issues arose with the quality of the data. For instance, a section of the data included user events, or the actions that a user was capable of performing (view, purchase, wishlist, and cart). The typical path for any individual who seeks to purchase an item is either view to cart to purchase, or view to purchase. Unfortunately, the way this dataset was simulated was such that the order of the events was randomized as was the timeline of events, and thus certain points of the funnel returned no values, or returned unreasonably long lengths in time. Nevertheless, SQL queries exist to find the two mentioned paths and create a count for them, as well as the average time elapsed between key events.
 
@@ -48,9 +48,9 @@ Users who viewed a product before buying it spent about 140 days before purchasi
 
 During my analysis, I found that 7,000 active users were found to have created an account, but chose never to make a purchase. 
 
-In total, of all products that were succesfully purchased or returned, 65.54% of products received no review.In this dataset, users have the possibility of performing one of the following actions: view, purchase, wishlist, and cart. Typically, an individual will perform approximately 8 actions throughout the lifecycle of their account.
+In total, of all products that were successfully purchased or returned, 65.54% of products received no review.In this dataset, users have the possibility of performing one of the following actions: view, purchase, wishlist, and cart. Typically, an individual will perform approximately 8 actions throughout the lifecycle of their account.
 
-As mentioned in the Methods section, the data simulation assigned randomized dates and the order of events. The SQL query used to determine the path taken by individuals who completed a purchase found that only 3 cases existed where viewing a product resulted in a succesful purchase, while about 59,000 other purchases followed an other path that did not conclude in a purchase.
+As mentioned in the Methods section, the data simulation assigned randomized dates and the order of events. The SQL query used to determine the path taken by individuals who completed a purchase found that only 3 cases existed where viewing a product resulted in a successful purchase, while about 59,000 other purchases followed another path that did not conclude in a purchase.
 
 On average, if a customer used our services to buy an item, it is likely that they will use our services an average of approximately two times throughout the lifecycle of their account.
 
@@ -90,7 +90,7 @@ Suppose the above plot was partitioned into 4 separate segments, and the x- and 
 ![image_files/count_price](image_files/count_price)
 *A graphical representation of the range of the amount of times a product has been bought in comparison to the price of the product.*
 
-Although similar, the above plot does not follow the same pattern of a normal distribution; what is apprent, however, is that products with a price less than $1500 are bought the most often.
+Although similar, the above plot does not follow the same pattern of a normal distribution; what is apparent, however, is that products with a price less than $1500 are bought the most often.
 
 ## Categorizing Customers
 The following 10 customers have spent the most amount per order
@@ -108,4 +108,5 @@ The following 10 customers have spent the most amount per order
 |U002851|		5790.47|
 |U000564|		5717.67|
 ## Acknowledgements
+
 
