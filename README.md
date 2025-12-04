@@ -77,10 +77,16 @@ From our catalogue of products, 15.07% were purchased more than they were wishli
 The following products were bought the most often:
 ![image_files/top_10_count.png](image_files/top_10_count.png)
 
+
+### The Correlation Between Rating, Price, and Product Sales
+Pertinent to discovering the effects on a user's perception of a product are the products' price and its average rating.
+
+
+
 ## Categorizing Customers
 The following 10 customers have spent the most amount per order
 
-|user_id|		total_per_order|
+|user_id|		total_per_order (USD)|
 |--|--|
 |U000006|		7490.93|
 |U009076|		7013.55|
@@ -93,3 +99,4 @@ The following 10 customers have spent the most amount per order
 |U002851|		5790.47|
 |U000564|		5717.67|
 ## Acknowledgements
+
