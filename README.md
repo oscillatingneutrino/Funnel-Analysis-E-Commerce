@@ -77,4 +77,19 @@ From our catalogue of products, 15.07% were purchased more than they were wishli
 The following products were bought the most often:
 ![image_files/top_10_count.png](image_files/top_10_count.png)
 
+## Categorizing Customers
+The following 10 customers have spent the most amount per order
+
+|user_id|		total_per_order|
+|--|--|
+|U000006|		7490.93|
+|U009076|		7013.55|
+|U002814|		6360.11|
+|U005797|		6265.52|
+|U005921|		6195.80|
+|U004277|		6138.50|
+|U009626|		6101.43|
+|U005803|		6066.85|
+|U002851|		5790.47|
+|U000564|		5717.67|
 ## Acknowledgements
