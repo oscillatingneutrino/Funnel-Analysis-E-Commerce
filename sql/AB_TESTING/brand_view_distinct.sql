@@ -1,23 +1,14 @@
 -- This code removes duplicates from the view count
-WITH cte AS(
 SELECT
 	brand,
-    user_id,
-    COUNT(event_id) AS counter
+    COUNT(DISTINCT user_id) AS unique_views
     FROM products p
     JOIN events e
 		ON p.product_id = e.product_id
 	WHERE event_type = 'view'
     AND category = 'clothing'
     AND (brand = 'Harbor' OR brand = 'GreenLeaf')
-    GROUP BY brand, user_id
-)
-SELECT
-	brand,
-    COUNT(counter) AS brand_view
-    FROM cte
-    WHERE counter = 1
     GROUP BY brand
-    ORDER BY COUNT(counter) DESC
+	ORDER BY unique_views DESC
 
--- answer for this dataset: 600 Harbor, 488 GreenLeaf 
+-- answer for this dataset: 623 Harbor, 505 GreenLeaf 
