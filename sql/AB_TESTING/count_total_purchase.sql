@@ -2,17 +2,16 @@
 
 SELECT
 	brand,
-    COUNT(event_id) AS count_total_purchase
-    FROM products p
-    JOIN events e
-		ON p.product_id = e.product_id
+    COUNT(*) AS count_total_purchase
+    FROM order_items oi
+    JOIN products p
+		ON p.product_id = oi.product_id
 	JOIN orders o
-		on e.user_id = o.user_id
-	WHERE event_type = 'purchase'
-    AND category = 'clothing'
+		on oi.order_id = o.order_id
+    WHERE category = 'clothing'
     AND (brand = 'Harbor' OR brand = 'GreenLeaf')
     AND order_status NOT IN ('returned','cancelled')
     GROUP BY brand
-    ORDER BY COUNT(event_id) DESC
+    ORDER BY count_total_purchase DESC
 
--- Answer: 52 GreenLeaf, Harbor 38
+-- Answer: arbor 357, GreenLeaf 345
