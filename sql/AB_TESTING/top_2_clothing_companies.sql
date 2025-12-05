@@ -1,3 +1,5 @@
+-- Gets the top 2 clothing companies
+
 WITH cte AS(
 SELECT
 	p.brand,
@@ -26,3 +28,5 @@ SELECT
             ) AS t1
 	WHERE ranking <=2
     AND category = 'Clothing'
+
+-- Answer: Harbor, GreenLeaf
