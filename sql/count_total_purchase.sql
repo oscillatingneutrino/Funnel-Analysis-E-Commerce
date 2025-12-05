@@ -14,3 +14,5 @@ SELECT
     AND order_status NOT IN ('returned','cancelled')
     GROUP BY brand
     ORDER BY COUNT(event_id) DESC
+
+-- Answer: 52 GreenLeaf, Harbor 38
