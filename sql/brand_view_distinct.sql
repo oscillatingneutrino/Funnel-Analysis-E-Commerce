@@ -19,3 +19,5 @@ SELECT
     WHERE counter = 1
     GROUP BY brand
     ORDER BY COUNT(counter) DESC
+
+-- answer for this dataset: 600 Harbor, 488 GreenLeaf 
