@@ -131,8 +131,7 @@ This portion focuses on the two most popular clothing brands: Harbor and GreenLe
 |Distinct User Purchase Count|346|337|
 |Revenue|$45,550.82|$57,842.83|
 
-Harbor outperformed GreenLeaf in almost all metrics; implying a larger brand presence amongst our customer base. They have brought in more views and customers than GreenLeaf. That being 
-said, GreenLeaf’s revenue has been higher than that of Harbor’s by more than $12,000. The ratio of distinct purchase count to total product sales is marginally higher for GreenLeaf (97.68%) than it is for Harbor (96.62%), meaning that both companies attract approximately the same amount of distinct customers. With this in mind, it becomes apparent that individuals are willing to spend significantly more money on GreenLeaf products, and if this trend continues, GreenLeaf is likely to turn out as a more profitable clothing option than Harbor.
+Harbor outperformed GreenLeaf in almost all metrics; Harbor has a larger brand presence amongst our customer base. That being said, GreenLeaf’s revenue has been higher than that of Harbor’s by more than $12,000. The ratio of distinct purchase count to total product sales is marginally higher for GreenLeaf (97.68%) than it is for Harbor (96.62%), meaning that both companies attract approximately the same amount of distinct customers. With this in mind, it becomes apparent that individuals are willing to spend significantly more money on GreenLeaf products, and if this trend continues, GreenLeaf is likely to turn out as a more profitable clothing option than Harbor.
 
 ## Acknowledgements
 
