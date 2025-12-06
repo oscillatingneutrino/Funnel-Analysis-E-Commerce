@@ -28,3 +28,5 @@ GROUP BY cte.order_id, oi.product_id
 SELECT *
 	FROM cte2
 ORDER BY product_id ASC
+
+-- The most was 672 days; the least was 0.
