@@ -7,5 +7,6 @@ SELECT
 	WHERE category = 'Clothing'
 	AND ( brand = 'Harbor' OR brand = 'GreenLeaf' )
     GROUP BY brand
+	ORDER BY avg_rating DESC
 
 -- Ans: GreenLeaf: 3.81, Harbor: 3.84
