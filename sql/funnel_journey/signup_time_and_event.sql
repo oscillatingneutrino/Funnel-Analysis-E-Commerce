@@ -1,5 +1,5 @@
-
 -- answers the question of, how long did it take from action to signup or vise versa
+
 WITH cte AS (
 	SELECT
 		user_id,
