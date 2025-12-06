@@ -14,4 +14,4 @@ SELECT
     GROUP BY brand
     ORDER BY count_total_purchase DESC
 
--- Answer: arbor 357, GreenLeaf 345
+-- Answer: Harbor 357, GreenLeaf 345
