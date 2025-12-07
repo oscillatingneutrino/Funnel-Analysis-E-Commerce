@@ -164,5 +164,4 @@ In the table below are metrics obtained from the results from working with these
 Harbor outperformed GreenLeaf in almost all metrics, and have clearly brought in more views and customers. That being said, GreenLeaf’s revenue is more than $12,000 higher than that of Harbor. The ratio of distinct purchase count to total product sales is marginally higher for GreenLeaf (97.68%) than it is for Harbor (96.62%), meaning that both companies attract approximately the same amount of distinct customers. With this in mind, it becomes apparent that GreenLeaf is more profitable and a more valuable partnership.
 
 ## Acknowledgements
-
-
+I would first and foremost like to thank [Kaggle](https://www.kaggle.com/) for hosting the dataset that made this project possible.
