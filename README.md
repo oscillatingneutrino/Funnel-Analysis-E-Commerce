@@ -33,7 +33,7 @@ The aim of this project is to identify bottlenecks in the user journey and creat
 ## Data Quality
 After some inspection, several issues arose with the quality of the data. For instance, a section of the data included user events, or the actions that a user was capable of performing (e.g. view, purchase, wishlist, and cart). The typical path for any individual who seeks to purchase an item is either view to cart to purchase, or view to purchase. Unfortunately, the way this dataset was simulated was such that the order of the events and their timeline was randomized, and thus certain points of the funnel returned no values, or returned unreasonably long lengths in time. 
 
-The issue of date randomization occurred throughout all relevant tables; this led to cases where reviews were placed before the order was received, or orders were made prior to the creation of an account. These two situations are addressed in the methods section. The impact of this randomization, however, resulted in time spans between user actions and the order processing path itself that is unrealistic.
+The issue of date randomization occurred throughout all provided tables; this led to cases where reviews were placed before the order received, or orders were made prior to the creation of an account. These two situations are addressed in the methods section. The impact of this randomization, however, resulted in time spans between user actions and the orders themselves that are unrealistic.
 
 Other qualities that were randomized were the product rating, price, and product sales. As such, data in the section [Product Performance](#Product-Performance) is inaccurate and inconsistent, although possible explanations for the observed behavior are offered.
 
@@ -104,9 +104,7 @@ From our catalogue of products, 15% were purchased more than they were wishliste
 
 The following products were bought the most often:
 ![image_files/top_10_count.png](image_files/top_10_count.png)
-*The top 10 most frequently bought items, organized in descending order.*
 
-In the list above, Toys make up 40% of the 10 most bought items, taking the 1st,2nd,4th, and 10th position.
 
 ### The Correlation Between Rating, Price, and Product Sales & Probable Reasoning
 Pertinent to discovering the effects on a user's perception of a product are the products' price and its average rating.
@@ -116,8 +114,8 @@ Pertinent to discovering the effects on a user's perception of a product are the
 
 Suppose the above plot was partitioned into 4 separate segments, and the x- and y- markings were removed. If an outside individual was asked to correctly rearrange the plot, it is unlikely that they would be able to do so, as the plot appears to be uniformly scattered. This scattered pattern apparent in the above plot points to a minimal correlation between how often a product is bought and its average rating, and products with low ratings are bought the same amount of times as products with higher ratings. This effect can be reasonably explained through the following thought processes:
 
-Users who did not have a favorable experience using our website, or had an issue during shipping could have created multiple accounts and unfavorably reviewed products, skewing the data, causing it to be misrepresentative of the actual quality of the product. Since traffic to our website is low, the additional reviews have a more significant impact. This impact can also happen in the opposite direction, however, with sellers creating accounts to boost the ratings of their products.
-If a product has low reviews, but has high sales it could be the case that an outside individual - such as an influencer - left a negative review on a product, which in turn created a bias in the audience of said influencer, leading to negative reviews; if the people outside of the influencer continue to purchase the item, but choose not to leave ratings, then the product will continue to have high sales. The same can also be true for products with high ratings but low sales.
+- Users who did not have a favorable experience using our website, or had an issue during shipping could have created multiple accounts and unfavorably reviewed products, skewing the data, causing it to be misrepresentative of the actual quality of the product. Since traffic to our website is low, the additional reviews have a more significant impact. This impact can also happen in the opposite direction, however, with sellers creating accounts to boost the ratings of their products.
+- If a product has low reviews, but has high sales it could be the case that an outside individual - such as an influencer - left a negative review on a product, which in turn created a bias in the audience of said influencer, leading to negative reviews; if the people outside of the influencer continue to purchase the item, but choose not to leave ratings, then the product will continue to have high sales. The same can also be true for products with high ratings but low sales.
 
 
 ![image_files/count_price](image_files/count_price)
