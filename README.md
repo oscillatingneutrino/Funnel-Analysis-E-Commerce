@@ -104,7 +104,9 @@ From our catalogue of products, 15% were purchased more than they were wishliste
 
 The following products were bought the most often:
 ![image_files/top_10_count.png](image_files/top_10_count.png)
+*The top 10 most frequently bought items, organized in descending order.*
 
+In the list above, Toys make up 40% of the 10 most bought items, taking the 1st,2nd,4th, and 10th position.
 
 ### The Correlation Between Rating, Price, and Product Sales & Probable Reasoning
 Pertinent to discovering the effects on a user's perception of a product are the products' price and its average rating.
