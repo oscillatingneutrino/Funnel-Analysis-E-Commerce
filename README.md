@@ -33,7 +33,7 @@ The aim of this project is to identify bottlenecks in the user journey and creat
 ## Data Quality
 After some inspection, several issues arose with the quality of the data. For instance, a section of the data included user events, or the actions that a user was capable of performing (e.g. view, purchase, wishlist, and cart). The typical path for any individual who seeks to purchase an item is either view to cart to purchase, or view to purchase. Unfortunately, the way this dataset was simulated was such that the order of the events and their timeline was randomized, and thus certain points of the funnel returned no values, or returned unreasonably long lengths in time. 
 
-The issue of date randomization occurred throughout all provided tables; this led to cases where reviews were placed before the order received, or orders were made prior to the creation of an account. These two situations are addressed in the methods section. The impact of this randomization, however, resulted in time spans between user actions and the orders themselves that are unrealistic.
+The issue of date randomization occurred throughout all relevant tables; this led to cases where reviews were placed before the order was received, or orders were made prior to the creation of an account. These two situations are addressed in the methods section. The impact of this randomization, however, resulted in time spans between user actions and the order processing path itself that is unrealistic.
 
 Other qualities that were randomized were the product rating, price, and product sales. As such, data in the section [Product Performance](#Product-Performance) is inaccurate and inconsistent, although possible explanations for the observed behavior are offered.
 
