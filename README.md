@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Executive Summary](#Executive-Summary)
+- [Project Background](#Project-Background)
 - [Data Quality](#Data-Quality)
 - [Methods](#Methods)
 - [User Funnel Journey](#User-Funnel-Journey)
@@ -14,17 +15,20 @@
 
 ## Executive Summary
 
-The conversion rate of users who choose to use our services has been low. Approximately 70% of users who create an account do not make any purchase. Furthermore, 66% of products are wishlisted and not purchased, and if a user decides to make a purchase, it is only after approximately 140 days after viewing it. Beyond that, even if a transaction is successful, 50.28% of products are eventually returned. The aim of this project is to identify bottlenecks in the user journey and suggest data-backed solutions using SQL, Python, and Tableau. Having tested the user experience, I suggest the following recommendations to improve the conversion rate and profitability:
+Funnel analysis will identify bottlenecks in the user experience and develop a series of possible solutions with the objective of increasing customer retention and encouraging user spending. Additionally, a comparative performance review was conducted on Harbor and GreenLeaf clothing brands to assess profitability and provide an informed partnership decision.
 
-Add a rewards program to incentivize usage
-Introduce third party quality control with an emphasis on assuring customer expectations are met
-Create in-store events both related and not related to holidays (e.g. days when products of a particular brand receive a discount)
-Provide a method of comparing prices for a product using our site vs our competitors
-Equip small businesses with a method of selling their products and marketing their products under specialized labels to attract a wider range of customers
+Based on the analysis, the following strategies are suggested to improve conversion rates, customer satisfaction, and profitability:
 
-The above suggestions stem from the necessity to increase customer retention; adding a rewards program and creating in-store events serve the purpose of incentivising users to choose our site, while better customer support, site comparison, and small-business specialization are meant to improve the customer experience.
+Add a rewards program to incentivize repeat engagement.
+Introduce third party quality control with an emphasis on meeting customer expectations.
+Create in-store promotions, including apparel-specific discount days.
+Provide tools for price comparison using our site vs our competitors.
 
-Furthermore, by comparing the performance of our two best performing clothing brands, I suggest that we continue to house the products from GreenLeaf, whose profitability and brand recognition have brought in new customers.
+The above suggestions stem from the necessity to increase customer retention: adding a rewards program and creating in-store events incentivise further use, while better customer support and site comparison are meant to improve the customer experience.
+
+## Project Background
+A considerable amount of users choose to not use our services despite creating an account: approximately 70% of users who create an account do not make any purchase. Furthermore, 66% of products are wishlisted and not purchased.  Even if a transaction is successful, 50% of products are eventually returned. 
+The aim of this project is to identify bottlenecks in the user journey and create data-backed solutions with the goal of improving customer retention, conversion rates, and site use using SQL, Python, and Tableau.
 
 ## Data Quality
 After some inspection, several issues arose with the quality of the data. For instance, a section of the data included user events, or the actions that a user was capable of performing (e.g. view, purchase, wishlist, and cart). The typical path for any individual who seeks to purchase an item is either view to cart to purchase, or view to purchase. Unfortunately, the way this dataset was simulated was such that the order of the events and their timeline was randomized, and thus certain points of the funnel returned no values, or returned unreasonably long lengths in time. 
@@ -155,8 +159,7 @@ In the table below are metrics obtained from the results from working with these
 |Distinct User Purchase Count|346|337|
 |Revenue|$45,550.82|$57,842.83|
 
-Harbor outperformed GreenLeaf in almost all metrics, implying a larger brand presence amongst our customer base. They have brought in more views and customers than GreenLeaf. That being 
-said, GreenLeaf’s revenue has been higher than that of Harbor’s by more than $12,000. The ratio of distinct purchase count to total product sales is marginally higher for GreenLeaf (97.68%) than it is for Harbor (96.62%), meaning that both companies attract approximately the same amount of distinct customers. With this in mind, it becomes apparent that customers are willing to spend significantly more money on GreenLeaf products, and if this trend continues, GreenLeaf is likely to turn out as a more profitable clothing option than Harbor.
+Harbor outperformed GreenLeaf in almost all metrics, and have clearly brought in more views and customers. That being said, GreenLeaf’s revenue is more than $12,000 higher than that of Harbor. The ratio of distinct purchase count to total product sales is marginally higher for GreenLeaf (97.68%) than it is for Harbor (96.62%), meaning that both companies attract approximately the same amount of distinct customers. With this in mind, it becomes apparent that GreenLeaf is more profitable and a more valuable partnership.
 
 ## Acknowledgements
 
