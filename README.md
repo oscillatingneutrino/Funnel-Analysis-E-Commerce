@@ -19,10 +19,10 @@ Funnel analysis will identify bottlenecks in the user experience and develop a s
 
 Based on the analysis, the following strategies are suggested to improve conversion rates, customer satisfaction, and profitability:
 
-Add a rewards program to incentivize repeat engagement.
-Introduce third party quality control with an emphasis on meeting customer expectations.
-Create in-store promotions, including apparel-specific discount days.
-Provide tools for price comparison using our site vs our competitors.
+- Add a rewards program to incentivize repeat engagement.
+- Introduce third party quality control with an emphasis on meeting customer expectations.
+- Create in-store promotions, including apparel-specific discount days.
+- Provide tools for price comparison using our site vs our competitors.
 
 The above suggestions stem from the necessity to increase customer retention: adding a rewards program and creating in-store events incentivise further use, while better customer support and site comparison are meant to improve the customer experience.
 
