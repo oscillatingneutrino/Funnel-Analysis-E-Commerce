@@ -2,38 +2,55 @@
 
 ## Table of Contents
 - [Executive Summary](#Executive-Summary)
+- [Data Quality](#Data-Quality)
 - [Methods](#Methods)
 - [User Funnel Journey](#User-Funnel-Journey)
 - [User Engagement and Activity](#User-Engagement-and-Activity)
 - [Revenue Metrics](#Revenue-Metrics)
 - [Product Performance](#Product-Performance)
-- [AB Testing Major Clothing Companies](#AB-Testing-Major-Clothing-Companies)
+- [Comparative Performance Analysis](#Comparative-Performance-Analysis)
 - [Acknowledgements](#Acknowledgements)
 
 
 ## Executive Summary
-The conversion rate of users who choose to sign up to this company for a purchase has been low. Approximately 70% of users who create an account do not make any purchase. Furthermore, 65.83% of products are wishlisted and not purchased, and if a user decides to make a purchase, it is only after approximately 273 days. Beyond that, even if a transaction is successful, 50.28% of products are eventually returned. The aim of this project is to identify bottlenecks in the user journey and suggest data-backed solutions using SQL, Python, and Tableau. Having tested the user experience, I suggest the following recommendations to improve the conversion rate and profitability:
 
-Add incentives to users, such as a rewards program to incentivize usage
-Introduce a stronger customer support system capable of delivering answers to questions about products
+The conversion rate of users who choose to use our services has been low. Approximately 70% of users who create an account do not make any purchase. Furthermore, 66% of products are wishlisted and not purchased, and if a user decides to make a purchase, it is only after approximately 140 days after viewing it. Beyond that, even if a transaction is successful, 50.28% of products are eventually returned. The aim of this project is to identify bottlenecks in the user journey and suggest data-backed solutions using SQL, Python, and Tableau. Having tested the user experience, I suggest the following recommendations to improve the conversion rate and profitability:
+
+Add a rewards program to incentivize usage
+Introduce third party quality control with an emphasis on assuring customer expectations are met
 Create in-store events both related and not related to holidays (e.g. days when products of a particular brand receive a discount)
 Provide a method of comparing prices for a product using our site vs our competitors
 Equip small businesses with a method of selling their products and marketing their products under specialized labels to attract a wider range of customers
 
 The above suggestions stem from the necessity to increase customer retention; adding a rewards program and creating in-store events serve the purpose of incentivising users to choose our site, while better customer support, site comparison, and small-business specialization are meant to improve the customer experience.
 
-Furthermore, by comparing the performance of our two best performing clothing brands, I suggest that we continue to house the products from GreenLeaf, which have brought in more money than their competitor, Harbor.
+Furthermore, by comparing the performance of our two best performing clothing brands, I suggest that we continue to house the products from GreenLeaf, whose profitability and brand recognition have brought in new customers.
+
+## Data Quality
+After some inspection, several issues arose with the quality of the data. For instance, a section of the data included user events, or the actions that a user was capable of performing (e.g. view, purchase, wishlist, and cart). The typical path for any individual who seeks to purchase an item is either view to cart to purchase, or view to purchase. Unfortunately, the way this dataset was simulated was such that the order of the events and their timeline was randomized, and thus certain points of the funnel returned no values, or returned unreasonably long lengths in time. 
+
+The issue of date randomization occurred throughout all provided tables; this led to cases where reviews were placed before the order received, or orders were made prior to the creation of an account. These two situations are addressed in the methods section. The impact of this randomization, however, resulted in time spans between user actions and the orders themselves that are unrealistic.
+
+Other qualities that were randomized were the product rating, price, and product sales. As such, data in the section [Product Performance](#Product-Performance) is inaccurate and inconsistent, although possible explanations for the observed behavior are offered.
 
 ## Methods
-Upon the primary inspection of the provided data, it became apparent that a significant number of users displayed one or both of the following traits: there existed users who chose not to create an account, but used our services to purchase an item, and there were users who chose to review items before receiving them. Although problematic, in the former case, this can be explained by assuming that users who used the services but decided not to create an account were given a temporary user identification that stores purchase information to give the user the opportunity to streamline the process of account creation should they choose to create an account in the future.  The latter of the issues mentioned is problematic as reviews can impact the impression on users browsing a product, and potentially change its purchase rate. To address both of these issues, separate SQL queries using CASE statements were created to flag users who displayed either of the mentioned traits.
 
-Other issues arose with the quality of the data. For instance, a section of the data included user events, or the actions that a user was capable of performing (view, purchase, wishlist, and cart). The typical path for any individual who seeks to purchase an item is either view to cart to purchase, or view to purchase. Unfortunately, the way this dataset was simulated was such that the order of the events was randomized as was the timeline of events, and thus certain points of the funnel returned no values, or returned unreasonably long lengths in time. Nevertheless, SQL queries exist to find the two mentioned paths and create a count for them, as well as the average time elapsed between key events.
+### Flagging Anomalous Behavior
+A significant number of users displayed one or both of the following traits: there existed users who chose not to create an account, but used our services to purchase an item, and there were users who chose to review items before receiving them. The latter of the issues mentioned is problematic as reviews can impact the impression on users browsing a product, and potentially change its purchase rate. To address both of these issues, separate SQL queries using CASE statements were created to flag users who displayed either of the mentioned traits.
 
-A couple of questions arose regarding the amount of individuals within the dataset who made an account but never purchased an item. For these cases, a SQL query using EXCEPT was created to retrieve the pertinent list of individuals.
+### Data Cleaning
+A couple of questions emerged regarding the amount of individuals within the dataset who made an account but never purchased an item. For these cases, a SQL query using EXCEPT was created to retrieve the pertinent list of individuals.
 
+
+### Logic Behind the Funnel
 A user may not always have the necessary funds required to spend on any products. Such a user may instead choose to store said product in the "wishlist" category. In order to determine if users deem the price of our products as being outside of their budget, I counted the amount of items that were either purchased or wishlisted; in cases where there was not enough data to conclusively determine if a product was more purchased than wishlisted, a separate category (*Marginal Difference*) was given for these products.
 
-A majority of the analysis performed during the course of this assignment was primarily conducted on MySQL. The SQL queries used were created using subqueries, CTE's, RANK(), CASE statements, and aggregate functions. The results of queries were typically stored as csv files, which were used in conjunction with Tableau and Python for further analysis. In cases when aggregate functions were used to obtain singular values (e.g. an average), the result was written as a comment at the bottom of the mysql file.
+
+### Tools Used for Analysis
+
+A majority of the analysis performed during the course of this assignment was primarily conducted on MySQL. The SQL queries used were created using subqueries, CTEs, RANK(), CASE statements, and aggregate functions. The results of queries were typically stored as csv files, which were used in conjunction with Tableau and Python for further analysis. In cases when aggregate functions were used to obtain singular values (e.g. an average), the result was written as a comment at the bottom of the mysql file.
+
+The possibility for further filtration by product, brand, or product category is added as global filters in Tableau for more granular performance analysis.
 
 
 ## User Funnel Journey
@@ -49,15 +66,15 @@ On average, if a user chose to use our site before creating an account, it took 
 
 Users who viewed a product before buying it spent approximately 130 to 140 days before purchasing it. If a product was purchased and the order was either kept or returned, the average user spent about 220 days before leaving a review, with the most amount of time from receiving a product to reviewing it being 672 days, or 1.84 years.
 
+As noted before, the numbers mentioned here are unrealistic and are a result of the randomization of dates inherent to the simulated data.
+
 ## User Engagement and Activity
 
-During my analysis, I found that 7,000 active users were found to have created an account, but chose never to make a purchase. 
+During my analysis, I found that 7,000 active users were found to have created an account, but chose never to make a purchase. On average, if a customer used our services to buy an item, it is likely that they will use our services an average of two times throughout the lifecycle of their account.
 
 In total, of all products that were successfully purchased or returned, 65.54% of products received no review. In this dataset, users have the possibility of performing one of the following actions: view, purchase, wishlist, and cart. Typically, an individual will perform approximately 8 actions throughout the lifecycle of their account.
 
-As mentioned in the Methods section, the data simulation assigned randomized dates and the order of events. The SQL query used to determine the path taken by individuals who completed a purchase found that only 3 cases existed where viewing a product resulted in a successful purchase, while about 59,000 other purchases followed another path that did not conclude in a purchase.
-
-On average, if a customer used our services to buy an item, it is likely that they will use our services an average of two times throughout the lifecycle of their account.
+As mentioned in the Data Quality section, the data simulation assigned randomized dates and order of events, so a true funnel was not possible. The SQL query used to determine the path taken by individuals who completed a purchase found that only 3 cases existed where viewing a product resulted in a successful purchase, while about 59,000 other purchases followed another path that did not conclude in a purchase.
 
 
 ## Revenue Metrics
@@ -76,29 +93,32 @@ The average order value was found to be $595.93. When separated by category, a u
 |Clothing|171.23|
 |Sports|258.38|
 
+On average, customers spend most of their money on Electronics than on any other category.
+
 ## Product Performance
-From our catalogue of products, 15.07% were purchased more than they were wishlisted, while 65.83% of products were wishlisted. Of the products that were bought, 50.28% are returned.
+From our catalogue of products, 15% were purchased more than they were wishlisted, while 66% of products were wishlisted. Of the products that were bought, 50.28% are returned.
 
 The following products were bought the most often:
 ![image_files/top_10_count.png](image_files/top_10_count.png)
 
 
-### The Correlation Between Rating, Price, and Product Sales
+### The Correlation Between Rating, Price, and Product Sales & Probable Reasoning
 Pertinent to discovering the effects on a user's perception of a product are the products' price and its average rating.
 
 ![image_files/count_rating](image_files/count_rating)
 *A graphical representation of the range of the amount of times a product has been bought in comparison to the rating of the product.*
 
-Suppose the above plot was partitioned into 4 separate segments, and the x- and y- markings were removed. If an outside individual was asked to correctly rearrange the plot, it is unlikely that they would be able to do so, as the plot appears to be uniformly scattered. This scattered pattern apparent in the above plot points to the possibility that how often a product is bought is unaffected by the rating of said product, and products with low ratings are bought the same amount of times as products with higher ratings. This effect can be reasonably explained through the following thought processes:
+Suppose the above plot was partitioned into 4 separate segments, and the x- and y- markings were removed. If an outside individual was asked to correctly rearrange the plot, it is unlikely that they would be able to do so, as the plot appears to be uniformly scattered. This scattered pattern apparent in the above plot points to a minimal correlation between how often a product is bought and its average rating, and products with low ratings are bought the same amount of times as products with higher ratings. This effect can be reasonably explained through the following thought processes:
 
-Users who did not have a favorable experience using our website, or had an issue during shipping could have created multiple accounts and unfavorably reviewed products, skewing the data relating to be misrepresentative of the actual quality of the product. Since traffic to our website is low, the additional reviews have a more significant impact. This impact can also happen in the opposite direction, however, with sellers creating accounts to boost the rating of their products.
+Users who did not have a favorable experience using our website, or had an issue during shipping could have created multiple accounts and unfavorably reviewed products, skewing the data, causing it to be misrepresentative of the actual quality of the product. Since traffic to our website is low, the additional reviews have a more significant impact. This impact can also happen in the opposite direction, however, with sellers creating accounts to boost the ratings of their products.
 If a product has low reviews, but has high sales it could be the case that an outside individual - such as an influencer - left a negative review on a product, which in turn created a bias in the audience of said influencer, leading to negative reviews; if the people outside of the influencer continue to purchase the item, but choose not to leave ratings, then the product will continue to have high sales. The same can also be true for products with high ratings but low sales.
 
 
 ![image_files/count_price](image_files/count_price)
 *A graphical representation of the range of the amount of times a product has been bought in comparison to the price of the product.*
 
-Although similar, the above plot does not follow the same pattern of a normal distribution; what is apparent, however, is that products with a price less than $1500 are bought the most often.
+Although similar, the above plot does not follow the same pattern of a normal distribution; what is apparent, however, is that products with a price less than $500 are bought the most often.
+
 
 ## Categorizing Customers
 The following 10 customers have spent the most amount per order
@@ -116,9 +136,13 @@ The following 10 customers have spent the most amount per order
 |U002851|		5790.47|
 |U000564|		5717.67|
 
-## AB Testing Major Clothing Companies
+The top 10 customers spent an average of $6314.08, an amount more than $5,000 that of the average order value.
 
-This portion focuses on the two most popular clothing brands: Harbor and GreenLeaf. They were determined to be the most popular clothing brands by the amount of times products from these two companies were purchased. In this portion, let’s assume it became the case that we could only host one of these two companies. In the table below are metrics obtained from the results from working with these two companies.
+## Comparative Performance Analysis
+
+This portion focuses on the two most popular clothing brands: Harbor and GreenLeaf. They were determined to be the most popular clothing brands by the amount of times products from these two companies were purchased. In this portion, let’s assume it became the case that we could only host one of these two companies. 
+
+In the table below are metrics obtained from the results from working with these two companies.
 
 |Metric|Harbor|GreenLeaf|
 |--|--|--|
@@ -131,7 +155,8 @@ This portion focuses on the two most popular clothing brands: Harbor and GreenLe
 |Distinct User Purchase Count|346|337|
 |Revenue|$45,550.82|$57,842.83|
 
-Harbor outperformed GreenLeaf in almost all metrics; Harbor has a larger brand presence amongst our customer base. That being said, GreenLeaf’s revenue has been higher than that of Harbor’s by more than $12,000. The ratio of distinct purchase count to total product sales is marginally higher for GreenLeaf (97.68%) than it is for Harbor (96.62%), meaning that both companies attract approximately the same amount of distinct customers. With this in mind, it becomes apparent that individuals are willing to spend significantly more money on GreenLeaf products, and if this trend continues, GreenLeaf is likely to turn out as a more profitable clothing option than Harbor.
+Harbor outperformed GreenLeaf in almost all metrics, implying a larger brand presence amongst our customer base. They have brought in more views and customers than GreenLeaf. That being 
+said, GreenLeaf’s revenue has been higher than that of Harbor’s by more than $12,000. The ratio of distinct purchase count to total product sales is marginally higher for GreenLeaf (97.68%) than it is for Harbor (96.62%), meaning that both companies attract approximately the same amount of distinct customers. With this in mind, it becomes apparent that customers are willing to spend significantly more money on GreenLeaf products, and if this trend continues, GreenLeaf is likely to turn out as a more profitable clothing option than Harbor.
 
 ## Acknowledgements
 
