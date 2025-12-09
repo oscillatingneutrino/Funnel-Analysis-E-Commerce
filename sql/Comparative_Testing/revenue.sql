@@ -1,5 +1,5 @@
 -- This code gets the total revenue for the two companies mentioned
--- for their clothinf line
+-- for their clothing line
 
 SELECT
 	brand,
