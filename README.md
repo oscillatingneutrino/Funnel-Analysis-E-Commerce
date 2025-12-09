@@ -146,6 +146,10 @@ The top 10 customers spent an average of $6314.08, an amount more than $5,000 th
 
 This portion focuses on the two most popular clothing brands: Harbor and GreenLeaf. They were determined to be the most popular clothing brands by the amount of times products from these two companies were purchased. In this portion, let’s assume it became the case that we could only host one of these two companies. 
 
+![image_files/tableau_sample.png](image_files/tableau_sample.png)
+*A sample of a tableau dashboard comparing Harbor and GreenLeaf across all departments, as well as relevant revenue metrics. In this portion, only the clothing section is of importance.
+Link to Dashboard: https://public.tableau.com/views/FinancialSummary_17652716275580/FinancialSummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link*
+
 In the table below are metrics obtained from the results from working with these two companies.
 
 |Metric|Harbor|GreenLeaf|
